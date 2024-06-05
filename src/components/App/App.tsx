@@ -5,9 +5,9 @@ import SignUp from "../../pages/SignUp/SignUp";
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import PrivateRoute from "../PrivateRoute/PrivateRoute2";
 import Home from "../../pages/Home/Home";
-import { app } from "../../firebase";
+// import { app } from "../../firebase";
 
-console.log("app.options:", app.options);
+// console.log("app.options:", app.options);
 
 const App: FC = () => {
   return (

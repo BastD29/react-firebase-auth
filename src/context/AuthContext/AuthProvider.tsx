@@ -14,7 +14,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      console.log("user:", user);
+      // console.log("user:", user);
 
       if (user) {
         dispatch({ type: LOGIN, payload: user });
