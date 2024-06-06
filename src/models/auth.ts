@@ -1,7 +1,7 @@
-import { UserType } from "./user";
+// import { UserType } from "./user";
 
-type AuthType = {
-  user: UserType | undefined;
-};
+// type AuthType = {
+//   user: UserType | undefined;
+// };
 
-export type { AuthType };
+// export type { AuthType };

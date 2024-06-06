@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
@@ -11,8 +11,15 @@ const SignIn: FC = () => {
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
 
-  const { dispatch } = useAuthContext();
+  const { dispatch, state } = useAuthContext();
   const navigate = useNavigate();
+
+  // prevents access to SignIn page if user is already logged in
+  useEffect(() => {
+    if (state.user) {
+      navigate("/dashboard");
+    }
+  }, [state.user, navigate]);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();

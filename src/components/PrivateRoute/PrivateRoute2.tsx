@@ -9,6 +9,12 @@ type PrivateRouteProps = {
 const PrivateRoute: FC<PrivateRouteProps> = ({ children }) => {
   const { state } = useAuthContext();
 
+  console.log("state.user:", state.user);
+
+  if (state.loading) {
+    return <div>Loading...</div>;
+  }
+
   return state.user ? children : <Navigate to="/signin" />;
 };
 

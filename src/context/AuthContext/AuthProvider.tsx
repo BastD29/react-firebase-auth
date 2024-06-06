@@ -1,5 +1,5 @@
 import { FC, ReactNode, useEffect, useReducer } from "react";
-import { authReducer, initialAuthState } from "../../reducers/authReducer";
+import { authReducer, initialAuthState } from "../../reducers/authReducer2";
 import { AuthContext } from "./AuthContext";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase";
@@ -14,7 +14,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      // console.log("user:", user);
+      console.log("user:", user);
 
       if (user) {
         dispatch({ type: LOGIN, payload: user });

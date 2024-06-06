@@ -1,5 +1,5 @@
 import { Context, Dispatch, createContext } from "react";
-import { AuthType } from "../../models/auth";
+import { AuthType } from "../../models/auth2";
 import { AuthActionType } from "../../models/action";
 
 type AuthContextType = {
