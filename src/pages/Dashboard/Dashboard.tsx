@@ -1,9 +1,9 @@
 import { FC } from "react";
-import style from "./Dashboard.module.scss";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { LOGOUT } from "../../constants/actions";
+import style from "./Dashboard.module.scss";
 
 const Dashboard: FC = () => {
   const { dispatch, state } = useAuthContext();

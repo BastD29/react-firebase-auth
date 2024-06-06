@@ -1,9 +1,24 @@
-import { FC } from "react";
-import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { FC, useEffect } from "react";
+import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import style from "./Home.module.scss";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const Home: FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const { state } = useAuthContext();
+
+  // prevents access to Home page if user is already logged in
+  useEffect(() => {
+    if (state.user) {
+      navigate("/dashboard");
+    }
+  }, [state.user, []]);
+
+  if (state.loading) {
+    return <div>Loading...</div>;
+  }
 
   const renderHeading = () => {
     switch (location.pathname) {
