@@ -21,7 +21,7 @@ const Dashboard: FC = () => {
     <div className={style["dashboard"]}>
       <h2>Dashboard</h2>
       {state.user && (
-        <div>
+        <div className={style["dashboard__profile"]}>
           <p>Welcome, {state.user.email}</p>
           <button onClick={handleLogout}>Logout</button>
         </div>

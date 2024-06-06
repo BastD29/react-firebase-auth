@@ -1,5 +1,5 @@
 import { FC, ReactNode, useEffect, useReducer } from "react";
-import { authReducer, initialAuthState } from "../../reducers/authReducer2";
+import { authReducer, initialAuthState } from "../../reducers/authReducer3";
 import { AuthContext } from "./AuthContext";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase";

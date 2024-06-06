@@ -5,6 +5,7 @@ import SignUp from "../../pages/SignUp/SignUp";
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import PrivateRoute from "../PrivateRoute/PrivateRoute2";
 import Home from "../../pages/Home/Home";
+import ResetPassword from "../../pages/ResetPassword/ResetPassword";
 
 const App: FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: FC = () => {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
       </Route>
+      <Route path="/reset-password" element={<ResetPassword />} />
 
       <Route
         path="/dashboard"

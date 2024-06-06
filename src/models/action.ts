@@ -6,13 +6,18 @@
 
 // export type { UserActionType };
 
-import { LOGIN, LOGOUT, SIGNUP } from "../constants/actions";
+import { LOGIN, LOGOUT, RESET_PASSWORD, SIGNUP } from "../constants/actions";
 import { UserType } from "./user";
 
 type LoginActionType = { type: typeof LOGIN; payload: UserType };
 type SignupActionType = { type: typeof SIGNUP; payload: UserType };
 type LogoutActionType = { type: typeof LOGOUT };
+type ResetPasswordActionType = { type: typeof RESET_PASSWORD };
 
-type AuthActionType = SignupActionType | LoginActionType | LogoutActionType;
+type AuthActionType =
+  | SignupActionType
+  | LoginActionType
+  | LogoutActionType
+  | ResetPasswordActionType;
 
 export type { AuthActionType };

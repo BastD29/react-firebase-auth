@@ -1,9 +1,9 @@
-import { FC, useEffect, useState } from "react";
+import { FC, FormEvent, useEffect, useState } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 import { LOGIN } from "../../constants/actions";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import style from "./SignIn.module.scss";
 
 const SignIn: FC = () => {
@@ -21,7 +21,7 @@ const SignIn: FC = () => {
     }
   }, [state.user, navigate]);
 
-  const handleSubmit = async (event: React.FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     try {
       const userCredential = await signInWithEmailAndPassword(
@@ -58,6 +58,7 @@ const SignIn: FC = () => {
         placeholder="Password"
       />
       <button type="submit">Login</button>
+      <Link to="/reset-password">Forgot password?</Link>
     </form>
   );
 };
